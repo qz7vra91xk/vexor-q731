@@ -1,1 +1,85 @@
-:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}html,body{height:100%;margin:0;background:#070b13;color:#fff}body{overflow:hidden}.launch{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;background:radial-gradient(circle at 50% 38%,#142b4c,#070b13 68%);z-index:20}.launch[hidden],main[hidden]{display:none!important}.mark{font-size:clamp(34px,8vw,62px);font-weight:900;letter-spacing:.13em}.mark span{font-size:.35em;color:#91dcff;vertical-align:middle;letter-spacing:.1em}h1{font-size:clamp(18px,4vw,24px);margin:6px 0 0}p{color:#aabbcf;max-width:540px;line-height:1.5}.note{font-size:12px;opacity:.7;margin-top:28px}.ring{width:35px;height:35px;border:3px solid #2a4867;border-top-color:#81d8ff;border-radius:50%;animation:spin 1s linear infinite;margin:25px 0}@keyframes spin{to{transform:rotate(360deg)}}button{padding:14px 26px;border:0;border-radius:12px;font-size:16px;font-weight:750;background:#80d7ff;color:#051527;margin-top:20px;cursor:pointer;min-height:48px}#retryButton{background:#e4ecf9}main{position:fixed;inset:0;width:100%;height:100dvh;background:#000}#game{width:100%;height:100%;min-height:360px} @media (orientation:landscape){#game{min-height:0}}@media (prefers-reduced-motion:reduce){.ring{animation:none}}
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif}*{box-sizing:border-box}html,body{height:100%;margin:0;background:#070b13;color:#fff}body{overflow:hidden}.launch{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;background:radial-gradient(circle at 50% 38%,#142b4c,#070b13 68%);z-index:20}.launch[hidden],main[hidden],#readyControls[hidden]{display:none!important}.mark{font-size:clamp(34px,8vw,62px);font-weight:900;letter-spacing:.13em}.mark span{font-size:.35em;color:#91dcff;vertical-align:middle;letter-spacing:.1em}h1{font-size:clamp(18px,4vw,24px);margin:6px 0 0}p{color:#aabbcf;max-width:540px;line-height:1.5}.note{font-size:12px;opacity:.75;margin:12px auto}.ring{width:35px;height:35px;border:3px solid #2a4867;border-top-color:#81d8ff;border-radius:50%;animation:spin 1s linear infinite;margin:16px 0}@keyframes spin{to{transform:rotate(360deg)}}button{padding:14px 26px;border:0;border-radius:12px;font-size:16px;font-weight:750;background:#80d7ff;color:#051527;margin-top:15px;cursor:pointer;min-height:48px}#retryButton{background:#e4ecf9}label{display:block;margin:6px 0;font-size:13px;color:#c9def5}select{font:inherit;max-width:min(90vw,420px);background:#223753;color:white;border:1px solid #628dbb;padding:10px;border-radius:10px}main{position:fixed;inset:0;width:100%;height:100dvh;background:#000}#game{width:100%;height:100%;min-height:0}.orientationHint{display:none;position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:min(90vw,380px);padding:8px 12px;font-size:11px;color:#e5efff;background:#152437d9;border-radius:10px;text-align:center;pointer-events:none;z-index:3}@media (orientation:landscape){#game{min-height:0}}@media (prefers-reduced-motion:reduce){.ring{animation:none}}
+
+/* --- PMOS N64 · v3 controles táctiles --- */
+/* Las clases b_pmos_* son las generadas por EmulatorJS desde los IDs configurados. */
+@media (pointer:coarse) {
+  #game .ejs_virtualGamepad_parent {
+    bottom: max(12px, env(safe-area-inset-bottom));
+    height: min(48dvh, 350px);
+    pointer-events: none;
+    touch-action: none;
+  }
+  #game .ejs_virtualGamepad_parent .ejs_virtualGamepad_left,
+  #game .ejs_virtualGamepad_parent .ejs_virtualGamepad_right,
+  #game .ejs_virtualGamepad_parent .ejs_virtualGamepad_top,
+  #game .ejs_virtualGamepad_parent .ejs_virtualGamepad_bottom {
+    pointer-events: none;
+  }
+  #game .ejs_virtualGamepad_parent .ejs_virtualGamepad_button,
+  #game .ejs_virtualGamepad_parent .b_pmos_stick,
+  #game .ejs_virtualGamepad_parent .b_pmos_dpad {
+    pointer-events: auto;
+    touch-action: none;
+  }
+  #game .ejs_virtualGamepad_left {left:10px;bottom:58px;width:144px;height:230px;}
+  #game .ejs_virtualGamepad_right {right:10px;bottom:58px;width:166px;height:230px;}
+  #game .ejs_virtualGamepad_bottom {bottom:0;width:124px;left:50%;margin-left:-62px;height:34px;}
+  #game .ejs_virtualGamepad_button {
+    width:46px; height:46px; line-height:44px; border-radius:15px;
+    font-size:17px; font-weight:700; color:#f2f6fd;
+    background:rgba(42,60,83,.84); border:1px solid rgba(215,230,248,.55);
+    box-shadow:0 2px 5px rgba(0,0,0,.18);
+    transition:none;
+    -webkit-tap-highlight-color:transparent;
+  }
+  #game .ejs_virtualGamepad_button_down {background:rgba(95,157,213,.78);}
+  #game .b_pmos_cu, #game .b_pmos_cl, #game .b_pmos_cd, #game .b_pmos_cr {
+    width:42px; height:42px; line-height:40px; border-radius:13px; font-size:14px!important;
+    background:rgba(132,105,28,.81);
+  }
+  #game .b_pmos_a, #game .b_pmos_b {border-radius:50%;width:55px;height:55px;line-height:53px;font-size:22px!important;}
+  #game .b_pmos_a {background:rgba(30,120,91,.9);}
+  #game .b_pmos_b {background:rgba(60,107,163,.9);}
+  #game .b_pmos_l,#game .b_pmos_r,#game .b_pmos_z {width:55px;height:34px;line-height:32px;border-radius:10px;font-size:15px!important;}
+  #game .b_pmos_r {left:auto!important;right:0!important;}
+  #game .b_pmos_start {left:35px!important;top:0!important;width:66px;height:32px;line-height:30px;border-radius:10px;font-size:13px!important;}
+  /* Se eliminan Fast / Slow solo de la interfaz (las partidas y el motor no cambian). */
+  #game .b_speed_fast,#game .b_speed_slow,#game .b_speed_rewind{display:none!important;}
+  /* La cruceta adicional no cabe cómodamente junto al stick en vertical. */
+  #game .b_pmos_dpad {display:none!important;}
+}
+@media (pointer:coarse) and (orientation:landscape) {
+  #game .ejs_virtualGamepad_parent {height: min(65dvh,280px);bottom:max(4px,env(safe-area-inset-bottom));}
+  #game .ejs_virtualGamepad_left {left:12px;bottom:8px;width:238px;height:180px;}
+  #game .ejs_virtualGamepad_right {right:12px;bottom:8px;width:206px;height:180px;}
+  #game .b_pmos_stick {position:absolute;left:0;top:0;width:100%;height:100%;}
+  #game .b_pmos_dpad {display:block!important;position:absolute;left:88%!important;top:55%!important;width:76px;height:76px;transform:translate(-50%,-50%);}
+  #game .ejs_virtualGamepad_button {width:42px;height:42px;line-height:40px;}
+  #game .b_pmos_cu {left:75px!important;top:-5px!important;}
+  #game .b_pmos_cl {left:30px!important;top:36px!important;}
+  #game .b_pmos_cd {left:75px!important;top:77px!important;}
+  #game .b_pmos_cr {left:120px!important;top:36px!important;}
+  #game .b_pmos_b {left:40px!important;top:122px!important;}
+  #game .b_pmos_a {left:135px!important;top:122px!important;}
+  #game .b_pmos_l,#game .b_pmos_z,#game .b_pmos_r{top:-27px!important;}
+  #game .b_pmos_l {left:10px!important;}
+  #game .b_pmos_z {left:87px!important;}
+  #game .b_pmos_r {right:10px!important;}
+  #game .ejs_virtualGamepad_bottom{bottom:4px;}
+}
+@media (pointer:coarse) and (orientation:portrait) and (max-width:380px){
+  #game .ejs_virtualGamepad_left{left:4px;width:138px;}
+  #game .ejs_virtualGamepad_right{right:4px;width:164px;}
+  #game .b_pmos_a{left:105px!important;}
+  #game .b_pmos_cr{left:123px!important;}
+}
+
+@media (pointer:coarse) and (orientation:portrait){
+  #game .b_pmos_r {top:-29px!important;}
+  #game .b_pmos_cu {top:10px!important;left:76px!important;}
+  #game .b_pmos_cl {top:56px!important;left:27px!important;}
+  #game .b_pmos_cr {top:56px!important;left:125px!important;}
+  #game .b_pmos_cd {top:102px!important;left:76px!important;}
+  #game .b_pmos_b {top:175px!important;left:18px!important;}
+  #game .b_pmos_a {top:175px!important;left:102px!important;}
+}

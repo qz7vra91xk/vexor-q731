@@ -1,25 +1,23 @@
-PMOS N64 · 10 CARTUCHOS · Assets03
+PMOS · Nintendo 64 · CONTROLES MÓVILES v3
 
-Este paquete contiene exclusivamente el sitio N64 (no modifica GBA).
+INSTALACIÓN
+1. Conserva copia de los archivos actuales de n64-test en GitHub.
+2. Sustituye SOLO index.html, app.js y style.css dentro de n64-test/.
+3. NO reemplaces n64-games.json (se adjunta idéntico únicamente para consulta).
+4. Confirma GitHub Pages. Prueba en pestaña privada de Brave/Chrome para evitar la caché.
 
-1. Descomprime el ZIP.
-2. En https://github.com/qz7vra91xk/vexor-q731/ crea o abre la carpeta n64-test.
-3. Sube estos cinco archivos DENTRO de n64-test (no al directorio raíz):
-   index.html, app.js, style.css, n64-games.json, LEEME.txt.
-4. Revisa GitHub Pages y abre:
-   https://qz7vra91xk.github.io/vexor-q731/n64-test/?id=<ID_N64>
-5. Para iniciar un juego, presiona Iniciar en la pantalla; EmulatorJS puede requerir la interacción.
-6. Prueba en Chrome y Samsung S25 Ultra antes de grabar NFC.
+CAMBIOS
+- Corregidos valores reales de control N64 según el código de EmulatorJS: A=0, B=1, L=10, R=11, Z=12; analógico 16-19 y C 20-23.
+- Un solo joystick visible en vertical. La cruceta secundaria se muestra en horizontal.
+- Botones más compactos, borde táctil y separación, sin Fast/Slow que estorbaban.
+- Se conserva el selector de núcleo, la ubicación Cloudflare y el mismo gameID para guardar/cargar estados.
+- No se ha modificado la resolución interna del juego, ya que depende del motor.
 
-ARCHIVOS EN CLOUDFLARE
-Bucket: printmakeros-retro-assets
-Carpeta: Assets03
-Nombres EXACTOS: 1 (1).n64, ... , 1 (10).n64.
+PRUEBA EN SAMSUNG
+1. Con el mismo NFC, inicia el juego y gíralo a horizontal.
+2. Prueba B, A, palanca, Z, L, R y cuatro C.
+3. Prueba cargar una partida ya guardada.
+4. Si alguna tecla no funciona, repórtala: no cambies gameID.
+5. Si falla el renderizado, restaura los 3 archivos anteriores.
 
-NOTAS
-- Se codifican espacios y paréntesis al generar la URL de R2.
-- Por ahora no se incluye caché offline garantizado.
-- La emulación N64 en Android depende del juego y del dispositivo.
-- Si aparece Failed to fetch, comprueba que la política CORS de R2 permita https://qz7vra91xk.github.io y métodos GET y HEAD.
-- No se ha comprobado aún el arranque real de los 10 juegos.
-- Los enlaces N64 y GBA son diferentes; el sistema GBA existente permanece intacto.
+AVISO: CSS y sintaxis comprobados; no ha sido probado con el emulador completo en un Samsung físico.
