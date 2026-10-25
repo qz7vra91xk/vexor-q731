@@ -1,0 +1,25 @@
+PMOS N64 · 10 CARTUCHOS · Assets03
+
+Este paquete contiene exclusivamente el sitio N64 (no modifica GBA).
+
+1. Descomprime el ZIP.
+2. En https://github.com/qz7vra91xk/vexor-q731/ crea o abre la carpeta n64-test.
+3. Sube estos cinco archivos DENTRO de n64-test (no al directorio raíz):
+   index.html, app.js, style.css, n64-games.json, LEEME.txt.
+4. Revisa GitHub Pages y abre:
+   https://qz7vra91xk.github.io/vexor-q731/n64-test/?id=<ID_N64>
+5. Para iniciar un juego, presiona Iniciar en la pantalla; EmulatorJS puede requerir la interacción.
+6. Prueba en Chrome y Samsung S25 Ultra antes de grabar NFC.
+
+ARCHIVOS EN CLOUDFLARE
+Bucket: printmakeros-retro-assets
+Carpeta: Assets03
+Nombres EXACTOS: 1 (1).n64, ... , 1 (10).n64.
+
+NOTAS
+- Se codifican espacios y paréntesis al generar la URL de R2.
+- Por ahora no se incluye caché offline garantizado.
+- La emulación N64 en Android depende del juego y del dispositivo.
+- Si aparece Failed to fetch, comprueba que la política CORS de R2 permita https://qz7vra91xk.github.io y métodos GET y HEAD.
+- No se ha comprobado aún el arranque real de los 10 juegos.
+- Los enlaces N64 y GBA son diferentes; el sistema GBA existente permanece intacto.
